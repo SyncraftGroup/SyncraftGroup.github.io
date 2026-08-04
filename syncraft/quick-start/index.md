@@ -1,0 +1,24 @@
+# 概览
+
+::: tip
+从此开始，本文档的内容面向 syncraft-server 使用者，即腐竹们。
+
+如果你是普通玩家，完全可以交给你的腐竹去操心。但阅读本文档也可以帮助你理解腐竹到底花了多少心思……
+:::
+
+Syncraft 整个项目一共就只有三个二进制文件：
+
+  - 服务端：**syncraft-server**、**mswrapper(可选)**
+  - 客户端：**syncraft-core**
+
+  ## syncraft-core
+
+  这是一个 Minecraft 启动器核心，还包含一个 client 模块，为玩家提供交互式的使用界面。
+
+  ## syncraft-server
+
+  在 Minecraft 目录内建立工作区，向客户端开放各种 API ，为客户端提供必要信息；管理服务器更新。
+
+  ## mswrapper
+
+  一个极微小的包装器，只提供了利用 http 请求在服务器内运行指令的功能，相当于 rcon 的替代品。**这是可选的，不会影响到任何功能。**

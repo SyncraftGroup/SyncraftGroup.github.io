@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@vitepress-plugin/mermaid": "^1.0.0"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.19"
+  },
+  "scripts": {
+    "dev": "vitepress dev syncraft",
+    "prebuild": "mkdir -p public/assets && cp node_modules/1bit-ui/dist/1bit-ui.css public/assets/1bit-ui.css",
+    "build": "vitepress build syncraft",
+    "preview": "vitepress preview syncraft"
+  }
+}

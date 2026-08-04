@@ -1,0 +1,3 @@
+node_modules/
+syncraft/.vitepress/dist/
+syncraft/.vitepress/cache/
