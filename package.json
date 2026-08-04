@@ -7,7 +7,6 @@
   },
   "scripts": {
     "dev": "vitepress dev syncraft",
-    "prebuild": "mkdir -p public/assets && cp node_modules/1bit-ui/dist/1bit-ui.css public/assets/1bit-ui.css",
     "build": "vitepress build syncraft",
     "preview": "vitepress preview syncraft"
   }
