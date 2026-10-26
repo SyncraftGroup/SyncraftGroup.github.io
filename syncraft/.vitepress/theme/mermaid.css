@@ -1,0 +1,24 @@
+/*
+ * Layout for diagrams rendered by the theme's own mermaid component
+ * (`.vitepress/theme/Mermaid.vue`).
+ *
+ * There is deliberately no colour here: the component reads the VitePress
+ * palette at runtime so diagrams use the same background/text/border colours as
+ * the rest of the page in both light and dark mode.
+ */
+
+.vp-mermaid-container {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  margin: 20px 0;
+  overflow-x: auto;
+  /* Consumed by @vitepress-plugin/mermaid's scoped rule; match the page. */
+  --mermaid-background: var(--vp-c-bg);
+  background-color: var(--vp-c-bg);
+}
+
+.vp-mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+}
