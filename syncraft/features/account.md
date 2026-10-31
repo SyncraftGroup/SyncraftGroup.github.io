@@ -4,7 +4,7 @@ Syncraft 内置了一个定制的 [Yggdrasil](https://yushijinhun.github.io/auth
 
 ## 配置 Yggdrasil
 
-在 `syncraft.toml` 中，进行你的 yggdrasil 登录服务的配置：
+在 `syncraft.toml` 中，进行 yggdrasil 登录服务的配置：
 ```toml
 [yggdrasil]
 # 可选，yggdrasil 服务在其 meta 接口上显示的服务名
@@ -28,6 +28,9 @@ username = "noreply@example.com"
 password = "your_smtp_password"
 from_name = "WELCOME TO MY SERVER"
 ```
+
+若想自定义验证邮件的样式或文案，见[自定义邮件模板](../examples/email-template)。
+
 哪怕是正版账号来了，他们也得在 Syncraft 注册！但作为高贵的正版玩家，他们不需要特意配置皮肤，syncraft-server 会自动将正版皮肤转发到 Minecraft 服务器。
 
 :::tip

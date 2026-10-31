@@ -24,42 +24,65 @@ syncraft init --force
 
 syncraft 的初始化会在你的 Minecraft 服务器目录下创建 `syncraft.toml` 和 `syncraft/`，前者是 syncraft 的配置文件，后者是 syncraft 和 yggdrasil 的数据目录。
 
-## 安装服务
+## 注册服务器
 
-syncraft-server 可以以系统服务的形式安装在系统中。在终端内运行：
+syncraft 的守护进程是单进程多租户的：一台机器只需要运行一个守护进程，它可以同时服务多个已经注册的服务器。初始化完成后，把这个目录注册进去：
 
 ```bash
-syncraft serve install
+syncraft server add .
+```
+
+租户名默认取 `syncraft.toml` 里的 `info.id`，也可以用 `--name` 指定。查看和移除：
+
+```bash
+syncraft server list
+syncraft server remove <name>
+```
+
+多个服务器共存时，每个 `syncraft.toml` 的 `network.port` 必须不同。详见[多服务器](./multi-server)。
+
+## 安装服务
+
+`daemon` 系列命令只管理守护进程，与当前所在的目录无关：
+
+```bash
+syncraft daemon install
 ```
 
 软件将会写入服务并自动启动守护进程。你的机器重启时，syncraft-server 也会自动启动。你可以用以下命令管理守护进程：
 
 关闭守护进程：
 ```bash
-syncraft serve stop
+syncraft daemon stop
 ```
 
 启动守护进程：
 ```bash
-syncraft serve start
-```
-或
-```bash
-syncraft serve
+syncraft daemon start
 ```
 
 如果出于测试目的想让软件在前台运行，那么可以使用：
 ```bash
-syncraft serve run
+syncraft daemon foreground
+```
+
+查看守护进程和它正在服务的服务器：
+```bash
+syncraft daemon status
+```
+
+查看守护进程日志：
+```bash
+syncraft daemon logs
 ```
 
 如果你想卸载服务，运行：
 ```bash
-syncraft serve uninstall
+syncraft daemon uninstall
 ```
 
 ::: tip
-如果你不运行 `syncraft serve install` 安装服务，或者你的机器没有服务管理器，那么 syncraft 将会以内置守护线程实现的方式运行，这更加不稳定，但也可以用。
+如果你不运行 `syncraft daemon install` 安装服务，或者你的机器没有服务管理器，那么 syncraft 将会以内置 fallback 守护进程的方式运行，这更加不稳定，但也可以用。
 :::
 
 ## 安装 authlib-injector

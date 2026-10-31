@@ -8,6 +8,8 @@
 
 除了用于你的 Minecraft 服务器的端口外，你的机器至少要再额外提供一个端口给 syncraft-server。如果你使用内网穿透开服，那么你也额外需要一条隧道，
 
+如果你在同一台机器上注册多个 Minecraft 服务器，每个服务器都需要在各自的 `syncraft.toml` 里配置一个不同的 syncraft 端口。
+
 另外，如果你使用我们的 mswrapper，你需要禁止它的端口被外部访问。
 
 ::: danger

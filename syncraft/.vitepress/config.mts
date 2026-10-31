@@ -77,6 +77,9 @@ export default defineConfig({
   },
   title: "Syncraft Launcher Docs",
   description: "The official documents of Syncraft.",
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/syncraft/favicon.ico' }]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -101,6 +104,7 @@ export default defineConfig({
           { text: '概览', link: '/quick-start/' },
           { text: '环境检查', link: '/quick-start/environment' },
           { text: '安装', link: '/quick-start/installation' },
+          { text: '多服务器', link: '/quick-start/multi-server' },
           { text: '配置文件', link: '/quick-start/config-file' },
         ]
       },
@@ -113,6 +117,13 @@ export default defineConfig({
           { text: '同步机制详解', link: '/features/sync-internals' },
           { text: '账号管理', link: '/features/account' },
           { text: '指令脚本', link: '/features/scripts' },
+        ]
+      },
+      {
+        text: '操作示例',
+        collapsed: false,
+        items: [
+          { text: '自定义邮件模板', link: '/examples/email-template' },
         ]
       }
     ],

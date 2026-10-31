@@ -2,7 +2,7 @@
 
 ## syncraft.toml
 
-位于你的 Minecraft 服务器根目录下，`syncraft serve` 启动时读取。
+位于你的 Minecraft 服务器根目录下，syncraft 守护进程启动时读取。
 
 ```toml
 # 顶层键（必须写在第一个 [table] 之前）
@@ -127,5 +127,7 @@ https://mod.mcimirror.top/modrinth/v2
 | `yggdrasil.skin_domains` | string[] | 允许的皮肤域名白名单 |
 | `yggdrasil.identity_falsification` | bool | 是否允许伪造身份验证 |
 | `yggdrasil.email` | object | 可选，SMTP 邮箱配置，用于注册验证 |
+
+验证邮件正文可以用服务器根目录的 `verify-email.html` 覆盖，见[操作示例 · 自定义邮件模板](../examples/email-template)。
 
 见：[账号管理](../features/account)。
